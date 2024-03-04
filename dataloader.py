@@ -22,6 +22,9 @@ def process_pic(path, img_size):
     return x
 
 def output_pic(path, x):
+    """
+        convert tensor to picture and save it to path
+    """
     x = x.permute(1, 2, 0)
     x = (x + 1) / 2 * 255
     x = x.cpu().numpy()
@@ -31,6 +34,7 @@ def output_pic(path, x):
 def show_pic(process, save_path, steps=10):
     """
         process is tensor with shape [batch_size, T, img_size, img_size, channels]
+        displaying the generation process from noise to image as shown in README.md
     """
     batch_size = process.shape[0]
     T = process.shape[1]

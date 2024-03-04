@@ -2,4 +2,14 @@ embedding_size: 128
 batch_size: 32
 img_size: 128
 blocks: 2
-device: "cuda:4"
+lr: 0.00005
+epochs: 1000
+device: cuda:4
+path: ./data/CIFAR10/train
+channels: 
+  - 1
+  - 1
+  - 2
+  - 2
+  - 4
+  - 4
